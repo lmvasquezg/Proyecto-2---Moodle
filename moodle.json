@@ -726,13 +726,24 @@
                                             },
                                             "\n",
                                             "           - MARIADB_PORT_NUMBER=3306\n",
-                                            "           - MOODLE_DATABASE_USER=admin\n",
-                                            "           - MOODLE_DATABASE_NAME=moodledb\n",
+                                            "           - MOODLE_DATABASE_USER=",
+                                            {
+                                                "Ref": "DBUser"
+                                            },
+                                            "\n",
+                                            "           - MOODLE_DATABASE_NAME=",
+                                            {
+                                                "Ref": "DBName"
+                                            },
+                                            "\n",
                                             "           - ALLOW_EMPTY_PASSWORD=no\n",
-                                            "           - MOODLE_DATABASE_PASSWORD=LIMP2017\n",
+                                            "           - MOODLE_DATABASE_PASSWORD=",
+                                            {
+                                                "Ref": "DBPassword"
+                                            },
+                                            "\n",
                                             "           - MOODLE_USERNAME=admin\n",
                                             "           - MOODLE_PASSWORD=bitnami\n",
-                                            "           - MOODLE_EMAIL=isamuri.r@hotmail.com\n",
                                             "           - MOODLE_SKIP_INSTALL=${SKIP_INSTALL}\n",
                                             "       ports:\n",
                                             "           - '80:80'\n",
