@@ -586,7 +586,9 @@
         "ApplicationLoadBalancer": {
             "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
             "Properties": {
-                "Subnets": ["subnet-5abb587b", "subnet-fe24c198"]
+                "Subnets": {
+                    "Ref": "Subnets"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -626,7 +628,9 @@
                 "Port": 80,
                 "Protocol": "HTTP",
                 "UnhealthyThresholdCount": 5,
-                "VpcId": "vpc-4f073635",
+                "VpcId": {
+                    "Ref": "VpcId"
+                },
                 "TargetGroupAttributes": [
                     {
                         "Key": "stickiness.enabled",
@@ -651,7 +655,9 @@
         "WebServerGroup": {
             "Type": "AWS::AutoScaling::AutoScalingGroup",
             "Properties": {
-                "VPCZoneIdentifier": ["subnet-5abb587b", "subnet-fe24c198"],
+                "VPCZoneIdentifier": {
+                    "Ref": "Subnets"
+                },
                 "LaunchConfigurationName": {
                     "Ref": "LaunchConfig"
                 },
@@ -906,14 +912,24 @@
             "Type": "AWS::RDS::DBInstance",
             "Properties": {
                 "Engine": "MariaDB",
-                "DBName": "moodledb",
+                "DBName": {
+                    "Ref": "DBName"
+                },
                 "MultiAZ": {
                     "Ref": "MultiAZDatabase"
                 },
-                "MasterUsername": "admin",
-                "MasterUserPassword": "LIMP2017",
-                "DBInstanceClass": "db.t2.micro",
-                "AllocatedStorage": "100",
+                "MasterUsername": {
+                    "Ref": "DBUser"
+                },
+                "MasterUserPassword": {
+                    "Ref": "DBPassword"
+                },
+                "DBInstanceClass": {
+                    "Ref": "DBInstanceClass"
+                },
+                "AllocatedStorage": {
+                    "Ref": "DBAllocatedStorage"
+                },
                 "VPCSecurityGroups": [
                     {
                         "Fn::GetAtt": [
