@@ -21,4 +21,9 @@ Proyecto para Tópicos Especiales en Telemática que consiste en el despliegue d
 -   Seguridad: Luisa Maria Vasquez Gomez
 -   Integracion: Isabela Muriel Roldan
 
+## Contenido del repositorio
+- Bitácora de desarrollo del proyecto
+- Documento final con análisis y diseño del sistema
+- Archivo de despliegue automátioc en nube
+
 
