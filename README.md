@@ -24,6 +24,6 @@ Proyecto para Tópicos Especiales en Telemática que consiste en el despliegue d
 ## Contenido del repositorio
 - Bitácora de desarrollo del proyecto
 - Documento final con análisis y diseño del sistema
-- Archivo de despliegue automátioc en nube
+- Archivo de despliegue automático en nube
 
 
